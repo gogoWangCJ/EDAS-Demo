@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:hsf="http://www.taobao.com/hsf"
+     xmlns="http://www.springframework.org/schema/beans"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.taobao.com/hsf
+     http://www.taobao.com/hsf/hsf.xsd" default-autowire="byName">
+  
+  <bean id="itemService" class="com.wangcj.dao.ItemService.ItemServiceImpl" />
+  <hsf:provider  id="itemServiceProvider"  
+  				 interface="com.wangcj.service.ItemService"
+  				 ref="itemService"
+  				 version="0.0.1-SNAPSHOT"
+  				 group="com.wangcj"
+   >
+       <!-- 
+                    用 interface 属性说明该服务为此类的一个实现
+       ref 此服务具体实现的 spring 对象 
+       version 发布该服务的版本号，可任意指定，默认为 1.0.0
+       group  服务分组 
+        -->
+  
+  </hsf:provider>
+
+
+</beans>

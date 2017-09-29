@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:hsf="http://www.taobao.com/hsf"
+        xmlns="http://www.springframework.org/schema/beans"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.taobao.com/hsf
+        http://www.taobao.com/hsf/hsf.xsd" default-autowire="byName">
+        <!-- 消费一个服务示例 -->
+        <hsf:consumer
+            id="itemService"
+            interface="com.wangcj.controller.service.itemService"
+            version="0.0.1-SNAPSHOT"
+            group="com.wangcj">
+            
+             <!-- 
+             Bean ID，在代码中可根据此ID进行注入并使用  
+                                       服务名，与服务提供者的相应配置对应，HSF 将根据 interface + version + group 查询并订阅所需服务  
+                                         版本号，与服务提供者的相应配置对应，HSF 将根据 interface + version + group 查询并订阅所需服务  
+                                         分组名                          
+             -->
+            
+        </hsf:consumer>
+</beans>
